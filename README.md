@@ -1,16 +1,19 @@
 # flutter_school
 
-A new Flutter project.
+This is my personal journey from a Dart foundation to Flutter Mastery.
+
+## Phase 1: Foundations
+
+### 01. Hello World (Completed ✅)
+- **Concept:** Root widgets and the Widget Tree.
+- **Screenshot:** ![Hello World](screenshots/01_hello_world.png)
+
+### 02. The Scaffold (Completed ✅)
+- **Concept:** Using `Scaffold` for app structure (AppBar, Drawer, FAB).
+- **Key Insight:** The Scaffold acts as a layout container that provides slots for standard UI elements.
+- **Screenshot:** ![Scaffold Drawer](screenshots/02_the_scaffold.png)
+
+
+
 
 ## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
