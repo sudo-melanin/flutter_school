@@ -13,7 +13,6 @@ This is my personal journey from a Dart foundation to Flutter Mastery.
 - **Key Insight:** The Scaffold acts as a layout container that provides slots for standard UI elements.
 - **Screenshot:** ![Scaffold Drawer](screenshots/02_the_scaffold.png)
 
+### 03. The Layout (In Progress)
+- **Concept:** Using the big 4 layout widgets (Container, Rows and Columns, Stack, Expandable and Flexible).
 
-
-
-## Getting Started
