@@ -35,6 +35,11 @@ class LayoutMastery extends StatelessWidget {
             border: Border.all(color: Colors.green, width: 2),
           ),
         
+          // Column is a layout widget that arranges its children in a vertical direction.
+          // It takes a list of widgets as its children and displays them one after the other, from top to bottom.
+          // The mainAxisSize property of the Column widget determines how much space the column should take along its main axis (vertical axis).
+          // By default, the mainAxisSize is set to MainAxisSize.max, which means the column will take up all available vertical space.
+          //However, if you set it to MainAxisSize.min, the column will only take up as much vertical space as needed to fit its children.
 
           child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -42,6 +47,12 @@ class LayoutMastery extends StatelessWidget {
             const Text("Mobile App Developer",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
             const SizedBox(height: 10),
+
+            // Row is a layout widget that arranges its children in a horizontal direction.
+            // It takes a list of widgets as its children and displays them one after the other, from left to right.
+            // The mainAxisAlignment property of the Row widget determines how the children are aligned along the main axis (horizontal axis).
+            // The mainAxisAlignment property can take several values, such as MainAxisAlignment.start, MainAxisAlignment.center,
+            //MainAxisAlignment.end, MainAxisAlignment.spaceBetween, MainAxisAlignment.spaceAround, and MainAxisAlignment.spaceEvenly.
 
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

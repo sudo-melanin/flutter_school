@@ -13,6 +13,20 @@ This is my personal journey from a Dart foundation to Flutter Mastery.
 - **Key Insight:** The Scaffold acts as a layout container that provides slots for standard UI elements.
 - **Screenshot:** ![Scaffold Drawer](screenshots/02_the_scaffold.png)
 
-### 03. The Layout (In Progress)
-- **Concept:** Using the big 4 layout widgets (Container, Rows and Columns, Stack, Expandable and Flexible).
+### 03. Layout Basics (Completed ✅)
+- **Concept:** Mastering the "Big Three" of layout: `Container`, `Row`, and `Column`.
+- **Key Learnings:**
+    - **Container:** The "Box" widget used for padding, margins, and decoration like rounded corners.
+    - **Column:** Arranges widgets vertically (Top-to-Bottom).
+    - **Row:** Arranges widgets horizontally (Left-to-Right).
+    - **MainAxisAlignment:** Controls how space is distributed (e.g., `spaceBetween` pushes items to the edges).
+    - **Screenshot:** ![Layout Basics](screenshots/03_layout_basics.png)
 
+    ### 04. Expanded & Flexible (Completed ✅)
+- **Concept:** Managing screen space and preventing overflow errors.
+- **Key Learnings:**
+    - **Overflow:** The "Caution Tape" error happens when content is wider than the screen.
+    - **Expanded:** Forces a child to fill all remaining space in a Row/Column.
+    - **Flexible:** Allows a child to be its natural size but prevents it from breaking the layout if space gets tight.
+- **The Result:** Built a responsive News Tile and a layout comparison guide.
+- **Screenshot:** ![Expanded and Flexible](screenshots/04_flex_lesson.png)
