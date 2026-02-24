@@ -30,3 +30,11 @@ This is my personal journey from a Dart foundation to Flutter Mastery.
     - **Flexible:** Allows a child to be its natural size but prevents it from breaking the layout if space gets tight.
 - **The Result:** Built a responsive News Tile and a layout comparison guide.
 - **Screenshot:** ![Expanded and Flexible](screenshots/04_flex_lesson.png)
+
+### 05. The Stack (Completed ✅)
+- **Concept:** Layering widgets on top of each other.
+- **Key Learnings:**
+    - **Stack Order:** The last item in the code is the top-most item on the screen.
+    - **Positioned:** The "specialist" widget used to pin children to exact coordinates inside a Stack.
+    - **The Result:** Built a profile picture with a "ACTIVE" status badge floating on top.
+- **Screenshot:** ![Stack Basics](screenshots/05_stack_basics.png)
