@@ -38,3 +38,9 @@ This is my personal journey from a Dart foundation to Flutter Mastery.
     - **Positioned:** The "specialist" widget used to pin children to exact coordinates inside a Stack.
     - **The Result:** Built a profile picture with a "ACTIVE" status badge floating on top.
 - **Screenshot:** ![Stack Basics](screenshots/05_stack_basics.png)
+
+## 🏆 Phase 1 Capstone: Market Gist Profile
+- **Objective:** Combine all foundational layout widgets into a single, responsive profile page.
+- **Widgets Used:** Scaffold, Stack, Column, Row, Expanded, Container, CircleAvatar.
+- **Key Victory:** Managed complex nesting and verified badge positioning using **Stack Alignment**.
+- **Screenshot:** ![Market Gist Capstone](screenshots/06_market_gist_capstone.png)
