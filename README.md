@@ -22,7 +22,7 @@ This is my personal journey from a Dart foundation to Flutter Mastery.
     - **MainAxisAlignment:** Controls how space is distributed (e.g., `spaceBetween` pushes items to the edges).
     - **Screenshot:** ![Layout Basics](screenshots/03_layout_basics.png)
 
-    ### 04. Expanded & Flexible (Completed ✅)
+### 04. Expanded & Flexible (Completed ✅)
 - **Concept:** Managing screen space and preventing overflow errors.
 - **Key Learnings:**
     - **Overflow:** The "Caution Tape" error happens when content is wider than the screen.
@@ -44,3 +44,11 @@ This is my personal journey from a Dart foundation to Flutter Mastery.
 - **Widgets Used:** Scaffold, Stack, Column, Row, Expanded, Container, CircleAvatar.
 - **Key Victory:** Managed complex nesting and verified badge positioning using **Stack Alignment**.
 - **Screenshot:** ![Market Gist Capstone](screenshots/06_market_gist_capstone.png)
+
+## Phase 2: States and Interactivity
+
+### 06. State Basics
+- **Concept:** Moving from Stateless to Stateful widgets.
+- **Key Learning:** Using `setState()` to update the UI and adding conditional logic to prevent negative values.
+
+
