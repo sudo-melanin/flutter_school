@@ -51,4 +51,9 @@ This is my personal journey from a Dart foundation to Flutter Mastery.
 - **Concept:** Moving from Stateless to Stateful widgets.
 - **Key Learning:** Using `setState()` to update the UI and adding conditional logic to prevent negative values.
 
-
+### 07. Buttons and Feedback
+- **Concept:** Communicating with the user after an action.
+- **Key Learnings:**
+    - **SnackBar:** Floating alerts for quick success/error messages.
+    - **AlertDialog:** Modal pop-ups for critical confirmation steps.
+    - **Navigator.pop:** Closing the top-most layer (dialog) to return to the main screen.
