@@ -57,3 +57,10 @@ This is my personal journey from a Dart foundation to Flutter Mastery.
     - **SnackBar:** Floating alerts for quick success/error messages.
     - **AlertDialog:** Modal pop-ups for critical confirmation steps.
     - **Navigator.pop:** Closing the top-most layer (dialog) to return to the main screen.
+
+### 08. Gestures & Custom Touch (Phase 2 - Step 3.5)
+- **Concept:** Making non-button widgets (Containers, Icons) interactive.
+- **Key Learnings:**
+    - **InkWell:** Added for the Material "ripple" effect to give users visual confirmation.
+    - **GestureDetector:** Explored for advanced invisible touch handling.
+    - **UX Best Practice:** Prioritizing visual feedback to prevent multiple accidental taps.
