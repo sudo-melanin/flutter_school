@@ -5,7 +5,7 @@ void main() {
     const MaterialApp(
       home: GestureLesson(),
       debugShowCheckedModeBanner: false,
-    )
+    ),
   );
 }
 
@@ -17,22 +17,23 @@ class GestureLesson extends StatefulWidget {
 }
 
 class _GestureLessonState extends State<GestureLesson> {
-
   @override
-  Widget build (BuildContext context) {
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Gesture Lesson"),
         centerTitle: true,
       ),
-
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Gesture Detector: The invisible Wrapper
+            // GESTURE DETECTOR:
+            // A versatile wrapper for detecting raw physical interactions.
+            // It provides no visual feedback (ripple) by default but supports 
+            // advanced gestures like double taps and dragging.
             GestureDetector(
-              onTap: () => print("Cotainer Tapped!"),
+              onTap: () => print("Container Tapped!"),
               onDoubleTap: () => print("Double Tapped!"),
               child: Container(
                 padding: const EdgeInsets.all(20),
@@ -42,24 +43,30 @@ class _GestureLessonState extends State<GestureLesson> {
             ),
             const SizedBox(height: 40),
 
-            //INKWELL: The material Ripple
-            Material(                 // required for the ripple to show
-              color: Colors.transparent,
+            // INKWELL:
+            // A Material Design widget that provides a visual ripple effect on tap.
+            // Requires a Material widget ancestor to render the splash animation.
+            Material(
+              color: Colors.transparent, // Prevents the Material widget from blocking underlying UI
               child: InkWell(
-                onTap: () {},
-                borderRadius: BorderRadius.circular(10),
+                onTap: () {}, // Tap handler is required for the ripple to trigger
+                borderRadius: BorderRadius.circular(10), // Constrains the ripple to the border
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.blue),
+                    borderRadius: BorderRadius.circular(10),
                   ),
                   child: const Text("I have a ripple effect"),
                 ),
               ),
             ),
 
-            const SizedBox(height: 30,),
+            const SizedBox(height: 30),
 
+            // CUSTOM INTERACTIVE CARD:
+            // Implementation of a professional UI card with feedback.
+            // Using Material as the base ensures the InkWell ripple is visible.
             Material(
               color: Colors.white,
               borderRadius: BorderRadius.circular(15),
@@ -67,7 +74,8 @@ class _GestureLessonState extends State<GestureLesson> {
                 onTap: () {
                   print("Navigating to Product Details...");
                 },
-                borderRadius: BorderRadius.circular(15), // Matches the Material border
+                // borderRadius here ensures the splash follows the card corners
+                borderRadius: BorderRadius.circular(15),
                 child: Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
@@ -77,10 +85,10 @@ class _GestureLessonState extends State<GestureLesson> {
                   child: const Text("Product: Nigerian Rice (50kg)"),
                 ),
               ),
-            )  
+            )
           ],
         ),
-      )
+      ),
     );
   }
 }

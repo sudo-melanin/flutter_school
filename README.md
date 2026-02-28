@@ -64,3 +64,10 @@ This is my personal journey from a Dart foundation to Flutter Mastery.
     - **InkWell:** Added for the Material "ripple" effect to give users visual confirmation.
     - **GestureDetector:** Explored for advanced invisible touch handling.
     - **UX Best Practice:** Prioritizing visual feedback to prevent multiple accidental taps.
+
+### 09. Logic & Functions (Phase 2 - Step 4)
+- **Concept:** Separating business logic (calculations) from UI code.
+- **Key Learnings:**
+    - **Data Sanitization:** Using `double.tryParse` to prevent crashes from invalid user input.
+    - **Conditional Logic:** Implementing a dynamic discount system based on price thresholds.
+    - **UI Formatting:** Using `toStringAsFixed` for professional currency display.
