@@ -71,3 +71,10 @@ This is my personal journey from a Dart foundation to Flutter Mastery.
     - **Data Sanitization:** Using `double.tryParse` to prevent crashes from invalid user input.
     - **Conditional Logic:** Implementing a dynamic discount system based on price thresholds.
     - **UI Formatting:** Using `toStringAsFixed` for professional currency display.
+
+## 🏆 Phase 2 Capstone: Market Gist Entry Form
+A comprehensive form that captures market data and performs live calculations.
+- **Features:** - Real-time total price calculation (Price × Quantity).
+  - Dynamic UI updates via `onChanged` triggers.
+  - Two-step confirmation process (Dialog -> Snackbar).
+  - Full form reset upon successful save.
