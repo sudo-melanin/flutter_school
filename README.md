@@ -78,3 +78,24 @@ A comprehensive form that captures market data and performs live calculations.
   - Dynamic UI updates via `onChanged` triggers.
   - Two-step confirmation process (Dialog -> Snackbar).
   - Full form reset upon successful save.
+
+
+## 🏗️ Phase 3 - Lists & Navigation
+
+This phase focuses on giving the application a "Memory" and the ability to display large amounts of data efficiently.
+
+### 1. Data Modeling with Classes
+- **Concept:** Moving away from primitive data types to structured objects.
+- **Key Learning:** Created a `MarketItem` class to bundle `name`, `price`, and `quantity` into a single "brick" for the warehouse.
+- **Benefit:** Allows for cleaner code and easier data manipulation across different screens.
+
+### 2. List Management & State
+- **Concept:** Using `List<CustomObject>` to store history.
+- **Key Tool:** The `.add()` method inside `setState()` to update the warehouse dynamically.
+- **Verification:** Implemented a "Counter View" to track the list's length and ensure the State is receiving data correctly.
+
+### 3. Efficient UI Rendering (ListView.builder)
+- **The Engine:** Implemented `ListView.builder` for high-performance scrolling.
+- **Logic:** Learned how to use `itemCount` and `itemBuilder` to map a Dart List to a series of `ListTile` widgets.
+- **UX Design:** - Added an "Empty State" check to provide user guidance when the list is empty.
+    - Used `CircleAvatar` and `trailing` icons to create a professional, standard mobile list layout.
