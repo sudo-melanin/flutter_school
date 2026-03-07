@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
+import '/models/market_item.dart';
 
 /// DATA MODEL: A structured blueprint for market data.
 /// Using a class allows us to bundle name, price, and quantity into 
 /// a single 'MarketItem' object.
-class MarketItem {
-  final String name;
-  final double price;
-  final int quantity;
+// class MarketItem {
+//   final String name;
+//   final double price;
+//   final int quantity;
 
-  MarketItem({
-    required this.name,
-    required this.price,
-    required this.quantity,
-  });
-}
+//   MarketItem({
+//     required this.name,
+//     required this.price,
+//     required this.quantity,
+//   });
+// }
 
 void main() {
   runApp(const MaterialApp(

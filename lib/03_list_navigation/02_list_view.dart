@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-/// DATA MODEL: A custom class to represent a single market entry.
-/// This acts as the structured "blueprint" for all data in the warehouse.
+// DATA MODEL: A custom class to represent a single market entry.
+// This acts as the structured "blueprint" for all data in the warehouse.
 class MarketItem {
   final String name;
   final double price;
