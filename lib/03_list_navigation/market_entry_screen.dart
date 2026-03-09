@@ -72,6 +72,8 @@ class _MarketEntryScreenState extends State<MarketEntryScreen> {
       MaterialPageRoute(
           builder: (context) => MarketHistoryScreen(newItem: newItem)),
     );
+
+    
   }
 
   /// Clean up controllers when the widget is removed from the tree to prevent memory leaks.

@@ -101,3 +101,18 @@ This phase focuses on application architecture, efficient data rendering, and cr
 - Real-Time Reactive Validation: Used onChanged callbacks to provide immediate UI feedback via errorText attributes.
 - Input Sanitization: Utilized double.tryParse and .trim() methods to sanitize raw user input and prevent runtime type-mismatch crashes.
 - Resource Management: Implemented the dispose() pattern for TextEditingControllers to prevent memory leaks.
+
+## 🏗️ Phase 3.5: Reactive State Management (Provider)
+This sub-phase marks the transition from Imperative Programming to Reactive Programming, decoupling the UI from the Business Logic.
+### 1. Global State Management & Dependency Injection
+- The Provider Pattern: Introduced ChangeNotifierProvider at the root of the application (main.dart) to create a "Global Brain" that persists across the entire app lifecycle.
+-Centralized Source of Truth: Migrated data storage from local widget lists to a centralized MarketProvider class, ensuring data consistency across multiple screens.
+
+### 2. Advanced Architectural Patterns
+- Encapsulation & Data Integrity: Implemented private backing fields (_allItems) and public getters in the Provider to prevent unauthorized state mutations.
+- The Observer Pattern: Leveraged notifyListeners() to broadcast state changes to "subscribed" widgets, eliminating the need for manual setState() calls across screen boundaries.
+- Resource Efficiency: Transitioned MarketHistoryScreen to a StatelessWidget, as UI updates are now driven externally by the Provider's stream of changes.
+### 3. Optimized User Experience (UX)
+- State Persistence: Solved the "Ephemeral State" issue; data remains populated in the History view even after navigating back to the Entry screen or popping the Navigator stack.
+- Reactive Feedback: Integrated SnackBar notifications and real-time validation error clearing within the Provider's update cycle.
+- Memory Safety: Continued strict enforcement of the dispose() pattern for TextEditingControllers to ensure high performance and prevent memory leaks.
