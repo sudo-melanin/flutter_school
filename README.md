@@ -80,22 +80,24 @@ A comprehensive form that captures market data and performs live calculations.
   - Full form reset upon successful save.
 
 
-## 🏗️ Phase 3 - Lists & Navigation
+## 🏗️ Phase 3 - Architecture, Navigation & Data Persistence
 
-This phase focuses on giving the application a "Memory" and the ability to display large amounts of data efficiently.
+This phase focuses on application architecture, efficient data rendering, and cross-screen state synchronization.
 
-### 1. Data Modeling with Classes
-- **Concept:** Moving away from primitive data types to structured objects.
-- **Key Learning:** Created a `MarketItem` class to bundle `name`, `price`, and `quantity` into a single "brick" for the warehouse.
-- **Benefit:** Allows for cleaner code and easier data manipulation across different screens.
-
-### 2. List Management & State
-- **Concept:** Using `List<CustomObject>` to store history.
-- **Key Tool:** The `.add()` method inside `setState()` to update the warehouse dynamically.
-- **Verification:** Implemented a "Counter View" to track the list's length and ensure the State is receiving data correctly.
-
-### 3. Efficient UI Rendering (ListView.builder)
-- **The Engine:** Implemented `ListView.builder` for high-performance scrolling.
-- **Logic:** Learned how to use `itemCount` and `itemBuilder` to map a Dart List to a series of `ListTile` widgets.
-- **UX Design:** - Added an "Empty State" check to provide user guidance when the list is empty.
-    - Used `CircleAvatar` and `trailing` icons to create a professional, standard mobile list layout.
+### 1. Data Modeling & Type Safety
+- Encapsulation: Transitioned from primitive data types to a structured MarketItem model to ensure data consistency.
+- Immutability: Leveraged final fields within the model to promote predictable state transitions.
+- Object-Oriented Design: Implemented custom constructors to enforce required parameters, preventing null-pointer exceptions during data transfer.
+### 2. Advanced Layouts & High-Performance Lists
+- ListView.builder: Optimized memory usage by implementing lazy-loading for large datasets, ensuring smooth 60 FPS scrolling.
+- Conditional Rendering: Developed "Empty State" UI logic to enhance UX when datasets are uninitialized.
+- Component Architecture: Utilized ListTile and CircleAvatar for standard material design compliance. 
+### 3. Imperative Routing & Parameter Passing
+- Navigator API: Implemented explicit routing using Navigator.push and MaterialPageRoute.
+- Constructor Injection: Developed a pattern for passing complex objects between route segments, enabling seamless data flow from the "Entry" module to the "History" module.
+- Lifecycle Management: Utilized initState() for data synchronization, ensuring incoming parameters are parsed before the initial build cycle.
+### 4. Data Integrity & Input Validation
+- Guard Clauses: Implemented logic gates to prevent invalid or empty state updates.
+- Real-Time Reactive Validation: Used onChanged callbacks to provide immediate UI feedback via errorText attributes.
+- Input Sanitization: Utilized double.tryParse and .trim() methods to sanitize raw user input and prevent runtime type-mismatch crashes.
+- Resource Management: Implemented the dispose() pattern for TextEditingControllers to prevent memory leaks.

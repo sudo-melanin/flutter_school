@@ -24,14 +24,34 @@ class _MarketEntryScreenState extends State<MarketEntryScreen> {
   final TextEditingController _priceController = TextEditingController();
   final TextEditingController _qtyController = TextEditingController();
 
+  // String? _nameError;
+  String? _priceError;
+  String? _quantityError;
+
   /// Handles the data packaging, UI reset, and navigation logic.
   void _saveAndNavigate() {
+
+    // GATHER DATA
+    String name = _nameController.text.trim();
+    double? price = double.tryParse(_priceController.text);
+    int? qty = int.tryParse(_qtyController.text);
+
+    // VALIDATION
+    if(name.isEmpty || price == null || qty == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Please enter a valid Name, Price and quantity"),
+          backgroundColor: Colors.red,
+        )
+      );
+      return;         // Stop, do not navigate
+    }
     // 1. DATA PACKAGING: Create a structured object from raw input.
     final newItem = MarketItem(
-        name: _nameController.text,
-        price: double.tryParse(_priceController.text) ?? 0.0,
-        quantity: int.tryParse(_qtyController.text) ?? 0);
-
+        name: name,
+        price: price,
+        quantity: qty,
+    );
     // 2. FEEDBACK: Notify the user that the action is being processed.
     ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text("Saving ${newItem.name}.....")));
@@ -41,6 +61,9 @@ class _MarketEntryScreenState extends State<MarketEntryScreen> {
       _nameController.clear();
       _priceController.clear();
       _qtyController.clear();
+    // Clears the error also
+      _priceError = null;
+      _quantityError = null;
     });
 
     // 4. NAVIGATION: Move to the History screen and pass the 'newItem' as luggage.
@@ -84,8 +107,16 @@ class _MarketEntryScreenState extends State<MarketEntryScreen> {
             TextField(
               controller: _priceController,
               keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
-                  labelText: "Price (\$)", border: OutlineInputBorder()),
+              decoration: InputDecoration(
+                  labelText: "Price (\$)", border: const OutlineInputBorder(),
+                  errorText: _priceError),
+                  onChanged: (value) => setState(() {
+                    if(value.isNotEmpty && double.tryParse(value) == null){
+                      _priceError = "Enter a valid Number";
+                    }else{
+                      _priceError = null;
+                    }
+                  }), 
             ),
             const SizedBox(height: 15),
 
@@ -93,8 +124,16 @@ class _MarketEntryScreenState extends State<MarketEntryScreen> {
             TextField(
               controller: _qtyController,
               keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
-                  labelText: "Quantity", border: OutlineInputBorder()),
+              decoration:  InputDecoration(
+                  labelText: "Quantity", border: const OutlineInputBorder(),
+                  errorText: _quantityError),
+                  onChanged: (value) => setState(() {
+                    if(value.isNotEmpty && int.tryParse(value) == null) {
+                      _quantityError = "Please Enter a valid quantity";
+                    }else{
+                      _quantityError = null;
+                    }
+                  }),
             ),
             const SizedBox(height: 30),
 
