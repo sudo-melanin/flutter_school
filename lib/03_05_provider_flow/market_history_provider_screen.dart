@@ -20,6 +20,22 @@ class MarketHistoryProviderScreen extends StatelessWidget {
         title: const Text("Market History V3.5"),
         centerTitle: true,
         backgroundColor: Colors.blue,
+        actions: [
+          // CONDITIONAL ACTION: Only displays the 'Clear All' option if the dataset contains items.
+          if (marketData.allItems.isNotEmpty)
+            IconButton(
+              icon: const Icon(Icons.delete_sweep, color: Colors.white),
+              tooltip: "Clear All",
+              onPressed: () {
+                // DISPATCHING ACTION: Triggering the global reset logic in the Provider.
+                context.read<MarketProvider>().clearAll();
+
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text("Inventory Cleared"), backgroundColor: Colors.redAccent),
+                );
+              },
+            )
+        ],
       ),
 
       // CONDITIONAL RENDERING: Evaluates the dataset's length to toggle between 
@@ -52,7 +68,21 @@ class MarketHistoryProviderScreen extends StatelessWidget {
                   subtitle: Text(
                     "Total Valuation: \$${(item.price * item.quantity).toStringAsFixed(2)}",
                   ),
-                  trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                  // ITEM-SPECIFIC ACTION: Provides the ability to remove a single entry.
+                  trailing: IconButton(
+                    icon: const Icon(Icons.delete_outline, color: Colors.red),
+                    onPressed: () {
+                      // STATE MODIFICATION: Calling the removeItem method by index.
+                      context.read<MarketProvider>().removeItem(index);
+
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text("${item.name} deleted"),
+                          backgroundColor: Colors.orange,
+                        ),
+                      );
+                    },
+                  ),
                 );
               },
             ),

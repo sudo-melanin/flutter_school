@@ -21,12 +21,25 @@ class MarketProvider extends ChangeNotifier {
     _allItems.add(item);
 
     // 2. CHANGE NOTIFICATION: This is the core of the 'Reactive' flow.
-    // It broadcasts a signal to all 'listening' widgets that they need to re-render 
-    // to show the updated data.
+    // It broadcasts a signal to all 'listening' widgets that they need to re-render.
     notifyListeners();
   }
 
-  /// UTILITY METHOD (Optional): Resets the data collection.
+  /// DELETION LOGIC: Removes a specific entry by its index.
+  /// Used for targeted removals within the History list.
+  void removeItem(int index) {
+    _allItems.removeAt(index);
+    notifyListeners();
+  }
+
+  /// BULK OPERATION: Wipes all entries from the dataset.
+  /// Effectively resets the state of the application's inventory.
+  void clearAll() {
+    _allItems.clear();
+    notifyListeners();
+  }
+
+  /// UTILITY METHOD: Resets the data collection.
   /// Demonstrates how global operations are centralized in one location.
   void clearHistory() {
     _allItems.clear();
